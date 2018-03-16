@@ -20,7 +20,6 @@ function tapeEquilibrium(A) {
   return minDifference;
 }
 
-// test
 function frogJmp(X, Y, D) {
   return X === Y ? 0 : Math.ceil((Y - X) / D);
 }
