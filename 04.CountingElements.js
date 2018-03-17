@@ -76,3 +76,10 @@ function missingInteger(A) {
 
   return count.indexOf(0) > -1 ? count.indexOf(0) : A.length + 1;
 }
+
+function permCheck(A) {
+  let sumA = A.reduce((accumulator, currentValue) => accumulator + currentValue);
+  let sumShouldBe = (A.length ) * (A.length + 1) / 2;
+
+  return sumShouldBe - sumA === 0 ? 1 : 0;
+}
