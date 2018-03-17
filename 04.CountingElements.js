@@ -64,3 +64,15 @@ function frogRiverOne(X, A) {
 
   return -1;
 }
+
+function missingInteger(A) {
+  let count = Array(A.length + 1).fill(0);
+  count[0] = 1;
+  for (let i = 0; i < A.length; i++) {
+    if (!count[A[i]]) {
+      count[A[i]] = 1;
+    }
+  }
+
+  return count.indexOf(0) > -1 ? count.indexOf(0) : A.length + 1;
+}
