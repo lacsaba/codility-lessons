@@ -47,3 +47,20 @@ function exercise_4_1_fast(A, B, m) {
   return false;
 }
 console.log(exercise_4_1_fast([0, 2, 3], [1, 2, 6], 6));
+
+
+function frogRiverOne(X, A) {
+  let count = [];
+  let leaves = 0;
+  for (let i = 0; i < A.length; i++) {
+    if (!count[A[i]]) {
+      count[A[i]] = 1;
+      leaves++;
+      if (leaves === X) {
+        return i;
+      }
+    }
+  }
+
+  return -1;
+}
