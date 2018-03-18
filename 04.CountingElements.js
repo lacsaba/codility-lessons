@@ -92,13 +92,15 @@ function permCheck(A) {
 function maxCounters(N, A) {
   if (A.length === 1) return A;
 
-  let count = Array(N).fill(0);
-  const max = Math.max(...A);
+  let count = Array(N);
+  const max = N + 1;
   let biggestCounter = 0;
 
   for (let i = 0; i < A.length; i++) {
     if (A[i] === max) {
       count.fill(biggestCounter);
+    } else if (!count[A[i] - 1]) {
+      count[A[i] - 1] = 1;
     } else {
       count[A[i] - 1] += 1;
     }
