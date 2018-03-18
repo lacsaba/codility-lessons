@@ -88,3 +88,24 @@ function permCheck(A) {
   }
   return count.indexOf(0) > -1 ? 0 : 1;
 }
+
+function maxCounters(N, A) {
+  if (A.length === 1) return A;
+
+  let count = Array(N).fill(0);
+  const max = Math.max(...A);
+  let biggestCounter = 0;
+
+  for (let i = 0; i < A.length; i++) {
+    if (A[i] === max) {
+      count.fill(biggestCounter);
+    } else {
+      count[A[i] - 1] += 1;
+    }
+    if (biggestCounter < count[A[i] - 1]) {
+      biggestCounter = count[A[i] - 1];
+    }
+  }
+
+  return count;
+}
