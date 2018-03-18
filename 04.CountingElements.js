@@ -78,8 +78,13 @@ function missingInteger(A) {
 }
 
 function permCheck(A) {
-  let sumA = A.reduce((accumulator, currentValue) => accumulator + currentValue);
-  let sumShouldBe = (A.length ) * (A.length + 1) / 2;
+  let count = Array(A.length + 1).fill(0);
+  count[0] = 1;
 
-  return sumShouldBe - sumA === 0 ? 1 : 0;
+  for (let i = 0; i < A.length; i++) {
+    if (!count[A[i]]) {
+      count[A[i]] = 1;
+    }
+  }
+  return count.indexOf(0) > -1 ? 0 : 1;
 }
