@@ -31,3 +31,10 @@ function mushrooms(A, k, m) {
 
   return result;
 }
+
+function countDiv(A, B, K) {
+  if (A === B && A % K !== 0) return 0;
+  if (A === B && A % K === 0) return 1;
+
+  return parseInt(B/K) - parseInt(A > 0 ? (A -1)/K : -1);
+}
